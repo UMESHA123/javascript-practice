@@ -1,0 +1,23 @@
+we know that when the javascript is executed in two step 
+and this execution is happen in class stack.
+
+class stack is nothing but an  call memory .
+
+when the global executtion is created at that time it is pushed to the stack.
+if any function excution context are present then those context are also pushed into the 
+stock in the order they are mensioned in the code 
+
+for example : stack[globa;_exe_context,func_exe_con1,func_exe_con2.....]
+pushing the obj to the class stack happing in creation pahseit first 
+push the global execution context into the stack and then the func_exe_con1, func_exe_con2
+and so on and in during the execution phase the last pushed func_exe_con2 is poped and 
+complier will first execute that first and after compliteing the that context.
+the next obj is poped from the class and execute that and this process is continous
+ 
+ stack[globa_exe_context,func_exe_con1,func_exe_con2.....] executing  fun..
+stack[globa_exe_context,func_exe_con1,func_exe_con2] executing func_exe_con2
+stack[globa_exe_context,func_exe_con1] executing func_exe_con1
+stack[globa_exe_context] executing globa_exe_context.
+stack[] --> is stack became empty the excution is complited.
+
+

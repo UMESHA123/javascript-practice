@@ -1,0 +1,157 @@
+when the js is encounters the code it brings the code to js engine
+and javascript engine creates an envirnoment which is called a execution context
+the execution context is created in two phase 
+creation pahse and 
+execution phase.
+
+in the creation phase the variable envirnoment is created which is called memory component
+in which it allowcates the memory to its all the variables.
+
+the execution pahse. it created s different thread of execution or it execution
+the code line by line.
+
+
+var x = 10
+function getSum(num){
+    var y = 7;
+    var total = sum + y;
+    return total;
+}
+var result1 = getSum(x);
+var result2 = getSum(20);
+
+
+
+this is a global execution context
+///////////////////////////////////////////////////////////////////////////
+/memory or creation phase   ///  code execution
+///////////////////////////////////////////////////////////////////////////
+/x - undefined              ///                         this is the function execution ontext
+/getSum : fn                ///  ////////////////////////////////////
+/result1 : undefined        ///  /memory             / code execution
+/result2 : undefined        ///  /////////////////////////////////////////
+/                           ///  / y : undefined     /
+/                           ///  / total : undefined /
+/                           ///  / num : undefined   /
+/                           ///  /////////////////////////////////////////
+/                           ///
+/                           ///     similarly for result2 = getsum() call
+/                           ///
+//////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+/memory or creation phase   ///  code execution
+///////////////////////////////////////////////////////////////////////////
+/x - 7                      ///                         this is the function execution ontext
+/getSum : fn                ///  ////////////////////////////////////
+/result1 : 17               ///  /memory             / code execution
+/result2 : 27               ///  /////////////////////////////////////////
+/                           ///  / num : 10            /
+/                           ///  / y : 7               /
+/                           ///  / total : 10+7 = 17   /
+/                           ///  /////////////////////////////////////////
+/                           ///
+/                           ///  similarly for result2 = getSum(20)
+/                           ///     num : 20
+/                           ///     y : 7
+/                           ///     total : 27
+/                           ///
+/                           ///
+/                           ///
+/                           ///
+/                           ///
+//////////////////////////////////////////////////////////////////////////
+
+
+the global context variable is stored in the variable object
+the function context key value is stored in the argument obj 
+the argument obj is like a array like object which will store all the argument that we are 
+passing to the function
+
+every js has one global context file that hold all the bundles of code including function context
+
+here in the creation pahse the getSum is the key and the function is the 
+value by it not allowcates the memory for getsum function. untill it calls.
+
+
+here in the creation or memory alowcation phase the js context will assign the particular memore location to 
+each variable and the function but not the function variable untill that function call. and by default all the 
+declered memory the undefined is stored.
+
+and in the excution phase it assign the value to that variable momry location.
+and if the function call then the function context is created again it also have a memory/creation pahse 
+and the eceution phase.
+in the function creation context it creates the new memory for all its functional variable and by default 
+undefined is stored and in the execution phase it assign the value to the mory location.
+
+
+
+execution context:
+the execution context is more importent in javascript the code executed inside the execution context.
+
+for example we have a browser.
+if the browser encouter the  javascript it brings the javascript runtime envirnoment into the piture which is 
+called js engine or js runtime engine 
+
+the js engine will execute the javascript file 
+
+for doing a js execution the js will first create js env(envirnoment) inside the js engine
+this env is called excution context.
+
+the execution envirnoment is usefull for createing a memore allocation of javascript variable. 
+and also execution the javascript
+
+so the execute context is envirnoment it helps javascript to createing a memore allocation and also the 
+executing the code 
+
+there are two type of executeing
+
+1: global execution context and 
+2: function execution context.
+
+the single global execution context for single javascript file and multiple execution context.
+because in a javascript file we have a multiple javascript function so that each function have a 
+function execute context.
+
+so if we use other framework or library lie react js in that if we have a several javascript file.
+but internal it converted or bundled into a single javascript file. so we have a single global execution 
+context.
+
+
+execution context :every execution context have three things
+
+every executing context have variable object and the argument obj.
+the variable obj is used to storing the execution context variable.
+the argument object is used to store the functional variable.
+argument object is like a array like object.
+
+envirnoment for scope and scope chaine.
+
+seting the value of this key word.
+
+
+creation phase and eceution phase.
+
+in the creation phase what happen is the engine go though the code it basicaly extract the variable decleration 
+and the function dcleration and it only extract the variable is decleared with the var  not let and the const.
+and then it will assign like key and value pair by default all the created key having a undefined in it.
+for example: 
+
+var x = 10;
+
+creation phase      execution phase 
+x : undefined       x : 10
+total : function()  y : 10, num : 10 total :20
+
+all this is stored in the variable object.
+
+
+in the execute phase javascript will create a thread or like it execute the javascript line by line
+so it works like syncronous way.
+
+javascript is syncronous and asynscronous .
+
+for example if the user click the button and display a pop message.
+this is an asynscronous execution. because pop message execution is depends upon the user click.
+

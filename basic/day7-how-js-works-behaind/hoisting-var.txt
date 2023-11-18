@@ -1,0 +1,57 @@
+hoising is a process where by we can access the value or function before it is 
+initilized.
+
+
+normal ways of declering  and initilizing first and then access like.
+
+var name = "umesha";
+console.log(name)
+
+function show(){
+    console.log("message");
+}
+show()
+
+output:
+umesha
+message..
+
+show()
+
+function show(){
+    console.log("message");
+}
+
+it still work
+
+if we store the function in the variable and the log it it will display undefined 
+for example
+
+console.log(dis)//it will disply undefined
+console.log(show())//this will work
+const dis = function show(){
+    console.log("display")
+}
+
+function show(){
+    console.log("display")
+}
+
+this is because in the execution context has two phase one is creation phase 
+and the execution phase what happen in execution phase is if we created any var in 
+our problum then creation phase will create a new memory for that variable and 
+by default assign the undefined.
+
+
+but 
+console.log(name)
+var name = "umesha";
+
+here it display undefined.
+but this undefined is not a error 
+
+console.log(name)
+now this will gives an error. refernce error.
+
+
+
